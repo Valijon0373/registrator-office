@@ -56,7 +56,7 @@ export default function Hero() {
                 { icon: CheckCircle, text: 'Real vaqt monitoring' },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2">
-                  <item.icon className="h-5 w-5 text-urspi-400" />
+                  <item.icon className="h-7 w-7 text-white" />
                   <span className="text-sm text-slate-300">{item.text}</span>
                 </div>
               ))}

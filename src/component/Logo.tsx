@@ -1,45 +1,51 @@
 import logo from '../assets/logo1.jpg'
 
 interface LogoProps {
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'sm' | 'md' | 'lg' | 'xl'
   showText?: boolean
-  subtitle?: string
+  title?: React.ReactNode
+  subtitle?: React.ReactNode
   theme?: 'light' | 'dark'
+  direction?: 'row' | 'col'
 }
 
 const sizeMap = {
-  sm: 'h-9 w-9',
-  md: 'h-10 w-10',
-  lg: 'h-12 w-12',
+  sm: 'h-10 w-10',
+  md: 'h-12 w-12',
+  lg: 'h-14 w-14',
+  xl: 'h-32 w-32',
 }
 
 const titleSizeMap = {
   sm: 'text-base',
   md: 'text-lg',
-  lg: 'text-xl',
+  lg: 'text-2xl',
+  xl: 'text-4xl',
 }
 
 export default function Logo({
   size = 'md',
   showText = true,
+  title = 'UrSPI',
   subtitle = 'urspi.uz',
   theme = 'dark',
+  direction = 'row',
 }: LogoProps) {
   const titleColor = theme === 'light' ? 'text-white' : 'text-slate-900'
   const subtitleColor = theme === 'light' ? 'text-slate-400' : 'text-slate-500'
 
   return (
-    <div className="flex items-center gap-3">
+    <div className={`flex items-center ${direction === 'col' ? 'flex-col gap-4 text-center' : 'gap-3'}`}>
       <img
         src={logo}
         alt="UrSPI logo"
-        className={`${sizeMap[size]} rounded-xl object-cover shadow-lg ring-1 ring-white/10`}
+        className={`${sizeMap[size]} rounded-full object-cover shadow-lg`}
       />
       {showText && (
-        <div>
-          <p className={`font-bold ${titleSizeMap[size]} ${titleColor}`}>UrSPI</p>
+        <div className={direction === 'col' ? 'flex flex-col items-center' : ''}>
+          <p className={`font-bold tracking-tight ${titleSizeMap[size]} ${titleColor}`}>{title}</p>
           {subtitle && (
-            <p className={`text-xs ${subtitleColor}`}>{subtitle}</p>
+            <p className={`${direction === 'col' ? 'mt-1 text-sm' : 'text-xs'} ${subtitleColor}`}>{subtitle}</p>
           )}
         </div>
       )}

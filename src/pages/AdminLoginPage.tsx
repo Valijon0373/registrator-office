@@ -34,13 +34,13 @@ export default function AdminLoginPage() {
       <div className="relative w-full max-w-md">
         <div className="mb-8 text-center">
           <Link to="/" className="inline-flex justify-center">
-            <Logo size="lg" theme="light" subtitle="Admin panel" />
+            <Logo size="xl" theme="light" title="UrSPI Admin" subtitle="" direction="col" />
           </Link>
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-xl">
-          <h1 className="text-2xl font-bold text-white">Tizimga kirish</h1>
-          <p className="mt-2 text-sm text-slate-400">
+          <h1 className="text-center text-2xl font-bold text-white">Tizimga kirish</h1>
+          <p className="mt-2 text-center text-sm text-slate-400">
             Admin panelga kirish uchun login va parolni kiriting
           </p>
 

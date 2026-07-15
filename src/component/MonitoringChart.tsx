@@ -9,24 +9,24 @@ export default function MonitoringChart({ data }: MonitoringChartProps) {
   )
 
   return (
-    <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/60">
+    <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/60 dark:bg-slate-900 dark:ring-slate-800">
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
             Haftalik monitoring
           </h2>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             Qabul qilingan va tugatilgan murojaatlar
           </p>
         </div>
         <div className="flex items-center gap-4 text-xs">
           <div className="flex items-center gap-1.5">
             <div className="h-2.5 w-2.5 rounded-full bg-urspi-500" />
-            <span className="text-slate-600">Qabul qilingan</span>
+            <span className="text-slate-600 dark:text-slate-300">Qabul qilingan</span>
           </div>
           <div className="flex items-center gap-1.5">
             <div className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
-            <span className="text-slate-600">Tugatilgan</span>
+            <span className="text-slate-600 dark:text-slate-300">Tugatilgan</span>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@ export default function MonitoringChart({ data }: MonitoringChartProps) {
                   title={`Tugatilgan: ${item.completed}`}
                 />
               </div>
-              <span className="text-xs font-medium text-slate-500">
+              <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
                 {item.day}
               </span>
             </div>
@@ -61,21 +61,21 @@ export default function MonitoringChart({ data }: MonitoringChartProps) {
         })}
       </div>
 
-      <div className="mt-6 grid grid-cols-3 gap-4 border-t border-slate-100 pt-6">
+      <div className="mt-6 grid grid-cols-3 gap-4 border-t border-slate-100 pt-6 dark:border-slate-800">
         <div className="text-center">
-          <p className="text-2xl font-bold text-slate-900">
+          <p className="text-2xl font-bold text-slate-900 dark:text-white">
             {data.reduce((s, d) => s + d.received, 0)}
           </p>
-          <p className="text-xs text-slate-500">Jami qabul</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">Jami qabul</p>
         </div>
         <div className="text-center">
-          <p className="text-2xl font-bold text-emerald-600">
+          <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
             {data.reduce((s, d) => s + d.completed, 0)}
           </p>
-          <p className="text-xs text-slate-500">Jami tugatilgan</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">Jami tugatilgan</p>
         </div>
         <div className="text-center">
-          <p className="text-2xl font-bold text-urspi-600">
+          <p className="text-2xl font-bold text-urspi-600 dark:text-urspi-400">
             {Math.round(
               (data.reduce((s, d) => s + d.completed, 0) /
                 data.reduce((s, d) => s + d.received, 0)) *
@@ -83,7 +83,7 @@ export default function MonitoringChart({ data }: MonitoringChartProps) {
             )}
             %
           </p>
-          <p className="text-xs text-slate-500">Samaradorlik</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">Samaradorlik</p>
         </div>
       </div>
     </div>

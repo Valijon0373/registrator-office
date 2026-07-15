@@ -14,10 +14,10 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-white/10 bg-slate-900/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
+    <nav className="sticky top-0 z-50 bg-gradient-to-br from-slate-900 via-urspi-900 to-slate-900 backdrop-blur-xl">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 lg:px-8">
         <Link to="/">
-          <Logo theme="light" />
+          <Logo theme="light" size="lg" />
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
